@@ -1,46 +1,3 @@
-# kodi_jumla = 0 
-# jumla_kuu = 0
-# bidhaa_zote = []
-# from datetime import datetime
-# while True:
-#     control = int(input("ingiza 1 ili kuingiza bidhaa nyingine na 0 kumaliza"))
-#     if control == 1:
-#         break
-#     try:
-#         bidhaa = input("ingiza jina la bidhaa ")
-#         bei = float(input("ingiza bei ya bidhaa "))
-#         idadi = int(input("ingiza idadi ya bidhaa "))
-#         kiasi = bei * idadi
-#         kodi = 0.18 * kiasi
-#         jumla = kodi + kiasi
-#         jumla_kuu += jumla 
-#         kodi_jumla += kodi 
-#         bidhaa_zote.append((bidhaa,bei,idadi,jumla))
-#     except:
-#         print("Tafadhali! ingiza namba...") 
-#         exit()   
-# tarehe = datetime.now()
-# tarehe_m = tarehe.strftime("%d-%m-%Y") 
-# muda = tarehe.strftime("%H:%M:%S")
-# print("\n" + "="*40)
-# print(f"{'SELEMANI MIX SHOP':^40}")
-# print(f"{'SIMU: 06230017380':^40}")
-# print("="* 40)
-# print(f"Tarehe:  {tarehe_m}")
-# print(f"Muda:  {muda}")
-# print("-"*40)
-# print(f"{'Bidhaa':<15}{'Bei':>7}{'Idadi':>8}{'jumla':>10}") 
-# for b in bidhaa_zote:
-#     print(f"{b[0]:<15}{b[1]:>7}{b[2]:>8}{b[3]:>10}")
-# print("-" * 40)
-# print(f"VAT(18%):  {kodi_jumla}")
-# print("=" * 40)
-# print(f"JUMLA KUU:  {jumla_kuu}")
-# print(f"{'ASANTE KWA KUNUNUA':^40}")
-# print("="* 40)
-
-
-
 
 # i =  1
 # while i <= 5:
@@ -106,12 +63,13 @@
 #         output += "x"
 #     print(output)     
 
-# numbers = [5,2,5,2,2,10]
-# lagest_number = numbers[0] 
-# for number in numbers:      
-#     if number > lagest_number:
-#         lagest_number = number 
-# print(lagest_number) 
+numbers = [5,2,5,2,2,10]
+ 
+for number in numbers: 
+    lagest_number = numbers[0]     
+    if number > lagest_number:
+        lagest_number = number 
+print(lagest_number) 
 
 # matrix =[
 #     [1,2,3],
