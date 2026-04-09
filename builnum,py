@@ -10,4 +10,5 @@ def number_pattern(n):
         if number != n:
             numbers += ' '
     return numbers 
-print(number_pattern(4))        
+print(number_pattern(4)) 
+       
