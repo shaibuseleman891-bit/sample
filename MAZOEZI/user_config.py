@@ -31,14 +31,41 @@ def update_setting(old, new_setting):
     else:
         old.update({key:value})
         return f"Setting '{key}' updated to '{value}' successfully!"
-        
 
 
+def delete_setting(one, two):
+    key = two.lower()
+    if key in one:
+        one.pop(key)
+        return f"Setting '{key}' deleted successfully!"
+    else:
+        return "Setting not found!"
 
+
+def view_settings(dictionary): 
+    if dictionary == {}:
+        return "No settings available."
+    else:
+        entries = ""
+        for keys,value in dictionary.items():
+            entry = f"{keys.capitalize()}: {value}\n"
+            entries += entry  
+        return f"Current User Settings:\n{entries}"
+print(view_settings(
+   {'theme': 'dark', 
+    'notifications': 'enabled', 
+    'volume': 'high'})) 
+
+  
+    
+print(delete_setting({'theme': 'light'}, 'theme'))
 
 print(update_setting({'theme': 'light'}, ('theme', 'dark')))
 
 print(update_setting({'theme': 'light'}, ('volume', 'high')))
 print(add_setting({'theme': 'light'}, ('volume', 'high')))
 print(add_setting({'theme': 'light'}, ('THEME', 'dark')))
+
+
+view_settings
 print(add_setting(test_settings, names))
