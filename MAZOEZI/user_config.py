@@ -18,9 +18,6 @@ def add_setting(settings, new_setting):
     for key, value in settings.items():
         print(key.lower(), value.lower())
 
-
-
-
 def update_setting(old, new_setting):
     key, value = new_setting
     key = key.lower()
