@@ -277,42 +277,103 @@
 # print(str(s1))
 
 
-class BankAccount:
-        def __init__(self,owner,balance):
-                self.owner = owner
-                self.balance = balance
-        def deposit(self,amount):
-                if amount > 0:
-                        self.balance += amount
+# class BankAccount:
+#         def __init__(self,owner,balance):
+#                 self.owner = owner
+#                 self.balance = balance
+#         def deposit(self,amount):
+#                 if amount > 0:
+#                         self.balance += amount
+#                 else:
+#                         print("Invalid amount")        
+#         def withdraw(self,amount):
+#                 if amount <= self.balance:
+#                         self.balance -= amount
+#                         return self.balance
+#                 elif amount <= 0:
+#                         print("Invalid amount")
+#                 else:
+#                         print("insufficint balance!!")
+#         def check_balance(self):  
+#                 return self.balance
+#         def transfer(self,amount,other_account):
+#                 if amount <= 0:
+#                         print("Invalid ammount")
+#                 elif amount <= self.balance:
+#                         self.balance -= amount
+#                         other_account.balance += amount #or other_account.deposit(amount)
+#         def __str__(self):
+#                 return f"Owner: {self.owner}, Balance: {self.check_balance()}"      
+# account_1 = BankAccount('selemani',1000)
+# account_2 = BankAccount('juma',600)
+# print(account_2.check_balance())
+# account_1.deposit(1000)
+# print(account_1.check_balance())
+# account_1.withdraw(500)
+# account_1.transfer(1000,account_2)
+# print(account_1.check_balance())
+# print(account_1)
+
+
+
+# class Student: 
+#         def __init__(self,name,marks=None):
+#                 self.name = name
+#                 if marks is None :
+#                         marks = []
+#                 else:        
+#                         self.marks = marks
+#         def calculate_average(self):
+#                 total = sum(self.marks)
+#                 number = len(self.marks)  
+#                 average = total / number
+#                 return average  
+#         def has_passed(self):
+#                 if self.calculate_average() >= 50:
+#                         return True
+#                 return False
+#         def get_grade(self):
+#             avg = self.calculate_average()
+#             if avg >= 75:
+#                     return 'A'
+#             elif avg >= 65:
+#                     return 'B'
+#             elif avg >= 50:
+#                     return 'c'
+#             else:
+#                     return 'F'                              
+#         def __str__(self):
+#                 return f"Jina: {self.name}, Wastani: {self.calculate_average()}, Grade: {self.get_grade()}"
+#         def add_mark(self,mark):
+#                 self.marks.append(mark)
+# student_1 = Student('selemani',[70,80,90])
+# print(student_1)
+
+
+class Category:
+        def __init__(self,name,ledger=None):
+                self.name = name
+                if ledger is None:
+                        self.ledger = []
                 else:
-                        print("Invalid amount")        
-        def withdraw(self,amount):
-                if amount <= self.balance:
-                        self.balance -= amount
-                        return self.balance
-                elif amount <= 0:
-                        print("Invalid amount")
+                        self.ledger = ledger
+        def deposit(self,amount,description=""):
+                self.ledger.append({'amount': amount, 'description': description})
+    
+        def withdraw(self,amount,description=""):
+                if amount <= self.get_balance():
+                        self.ledger.append({'amount': -amount, 'description': description})
+                        return True 
                 else:
-                        print("insufficint balance!!")
-        def check_balance(self):  
-                return self.balance
-        def transfer(self,amount,other_account):
-                if amount <= 0:
-                        print("Invalid ammount")
-                elif amount <= self.balance:
-                        self.balance -= amount
-                        other_account.balance += amount #or other_account.deposit(amount)
-        def __str__(self):
-                return f"Owner: {self.owner}, Balance: {self.check_balance()}"      
-account_1 = BankAccount('selemani',1000)
-account_2 = BankAccount('juma',600)
-print(account_2.check_balance())
-account_1.deposit(1000)
-print(account_1.check_balance())
-account_1.withdraw(500)
-account_1.transfer(1000,account_2)
-print(account_1.check_balance())
-print(account_1)
+                        False    
+   
+        def get_balance(self):
+                total = 0
+                for item in self.ledger:
+                        total += item['amount']
+                return total   
+                        
+                        
 
 
 
