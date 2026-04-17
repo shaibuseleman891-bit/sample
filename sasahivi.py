@@ -278,7 +278,7 @@
 
 
 class BankAccount:
-        def __init__(self,owner,balance=0):
+        def __init__(self,owner,balance):
                 self.owner = owner
                 self.balance = balance
         def deposit(self,amount):
@@ -296,14 +296,23 @@ class BankAccount:
                         print("insufficint balance!!")
         def check_balance(self):  
                 return self.balance
+        def transfer(self,amount,other_account):
+                if amount <= 0:
+                        print("Invalid ammount")
+                elif amount <= self.balance:
+                        self.balance -= amount
+                        other_account.balance += amount #or other_account.deposit(amount)
         def __str__(self):
                 return f"Owner: {self.owner}, Balance: {self.check_balance()}"      
-accont_1 = BankAccount('selemani')
-accont_1.deposit(1000)
-print(accont_1.check_balance())
-accont_1.withdraw(500)
-print(accont_1.check_balance())
-print(accont_1)
+account_1 = BankAccount('selemani',1000)
+account_2 = BankAccount('juma',600)
+print(account_2.check_balance())
+account_1.deposit(1000)
+print(account_1.check_balance())
+account_1.withdraw(500)
+account_1.transfer(1000,account_2)
+print(account_1.check_balance())
+print(account_1)
 
 
 
