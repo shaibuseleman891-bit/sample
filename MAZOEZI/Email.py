@@ -89,8 +89,8 @@ def main():
     ramy.send_email(tory, 'Re: Hello', 'Hi Tory, hope you are fine.')
     ramy.check_inbox()
     ramy.read_email(1)
-    ramy.inbox.delete_email(1)
-    ramy.check_inbox()
+    ramy.inbox.delete_email(1) #hii ni sehemu ambayo imenisumbua sana 
+    ramy.check_inbox()          #lakin unaweza kudifain kwenye user delete method 
     
 if __name__ == '__main__':
     main()

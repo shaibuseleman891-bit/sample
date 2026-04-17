@@ -63,13 +63,13 @@
 #         output += "x"
 #     print(output)     
 
-numbers = [5,2,5,2,2,10]
+# numbers = [5,2,5,2,2,10]
  
-for number in numbers: 
-    lagest_number = numbers[0]     
-    if number > lagest_number:
-        lagest_number = number 
-print(lagest_number) 
+# for number in numbers: 
+#     lagest_number = numbers[0]     
+#     if number > lagest_number:
+#         lagest_number = number 
+# print(lagest_number) 
 
 # matrix =[
 #     [1,2,3],
@@ -251,8 +251,31 @@ print(lagest_number)
 # except ValueError:
 #     print("INVALID VALUE")
 # except ZeroDivisionError:
-#     print("age can not be 0")        
+#     print("age can not be 0")      
 
 
+
+class Student:
+        def __init__(self,name,marks):
+                self.name = name
+                self.marks = marks
+        def add_mark(self,mark):
+                self.marks.append(mark)
+        def __str__(self):
+                return f"Name: {self.name}, Average: {self.average()}"
+                        
+        def average(self):
+                total = sum(self.marks)
+                number = len(self.marks)
+                average  = total / number 
+                return average             
+                        
+s1 = Student('juma',[50,60,90])
+
+s1.add_mark(100)
+print(s1.average())
+                            
+                
+                
 
        
