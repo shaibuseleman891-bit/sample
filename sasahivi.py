@@ -255,26 +255,58 @@
 
 
 
-class Student:
-        def __init__(self,name,marks):
-                self.name = name
-                self.marks = marks
-        def add_mark(self,mark):
-                self.marks.append(mark)
-        def __str__(self):
-                return f"Name: {self.name}, Average: {self.average()}"
+# class Student:
+#         def __init__(self,name,marks):
+#                 self.name = name
+#                 self.marks = marks
+#         def add_mark(self,mark):
+#                 self.marks.append(mark)
+#         def __str__(self):
+#                 return f"Name: {self.name}, Average: {self.average()}"
                         
-        def average(self):
-                total = sum(self.marks)
-                number = len(self.marks)
-                average  = total / number 
-                return average             
+#         def average(self):
+#                 total = sum(self.marks)
+#                 number = len(self.marks)
+#                 average  = total / number 
+#                 return average             
                         
-s1 = Student('juma',[50,60,90])
+# s1 = Student('juma',[50,60,90])
 
-s1.add_mark(100)
-print(s1.average())
-                            
+# s1.add_mark(100)
+# print(s1.average())
+# print(str(s1))
+
+
+class BankAccount:
+        def __init__(self,owner,balance=0):
+                self.owner = owner
+                self.balance = balance
+        def deposit(self,amount):
+                if amount > 0:
+                        self.balance += amount
+                else:
+                        print("Invalid amount")        
+        def withdraw(self,amount):
+                if amount <= self.balance:
+                        self.balance -= amount
+                        return self.balance
+                elif amount <= 0:
+                        print("Invalid amount")
+                else:
+                        print("insufficint balance!!")
+        def check_balance(self):  
+                return self.balance
+        def __str__(self):
+                return f"Owner: {self.owner}, Balance: {self.check_balance()}"      
+accont_1 = BankAccount('selemani')
+accont_1.deposit(1000)
+print(accont_1.check_balance())
+accont_1.withdraw(500)
+print(accont_1.check_balance())
+print(accont_1)
+
+
+
                 
                 
 
