@@ -350,28 +350,41 @@
 # print(student_1)
 
 
-class Category:
-        def __init__(self,name,ledger=None):
-                self.name = name
-                if ledger is None:
-                        self.ledger = []
-                else:
-                        self.ledger = ledger
-        def deposit(self,amount,description=""):
-                self.ledger.append({'amount': amount, 'description': description})
+# class Category:
+#     def __init__(self,name,ledger=None):
+#         self.name = name
+#         if ledger is None:
+#             self.ledger = []
+#         else:
+#             self.ledger = ledger
+#     def deposit(self,amount,description=""):
+#         self.ledger.append({'amount': amount, 'description': description})
     
-        def withdraw(self,amount,description=""):
-                if amount <= self.get_balance():
-                        self.ledger.append({'amount': -amount, 'description': description})
-                        return True 
-                else:
-                        False    
+#     def withdraw(self,amount,description=""):
+#         if amount <= self.get_balance():
+#             self.ledger.append({'amount': -amount, 'description': description})
+#             return True 
+#         else:
+#             False    
    
-        def get_balance(self):
-                total = 0
-                for item in self.ledger:
-                        total += item['amount']
-                return total   
+#     def get_balance(self):
+#         total = 0
+#         for item in self.ledger:
+#             total += item['amount']
+#         return total   
+
+#     def transer(self,amount,category): 
+#         if amount <= self.get_balance():
+#             self.withdraw(amount, f"Transfered to {category.name}")
+
+#             category.deposit(amount, f"received from {self.name}")
+#             return True
+#         else:
+#             return False      
+
+
+for i in range(100,0,-10):
+        print(f"{i:.>}|\n")
                         
                         
 

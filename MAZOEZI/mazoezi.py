@@ -66,6 +66,25 @@
 
 
 
+# import math
+# from turtle import *
+
+# tracer(10)
+# bgcolor('white')
+
+# for i in range(4300):
+#     color('blue')
+#     t = i/46
+#     x = 25 * math.cos(7*t) * math.sin(t)
+#     y = 25 * math.sin(7*t) * math.cos(t)
+#     goto(x*10, y*10)
+#     goto(0,0)
+# done()  y
+
+
+rows = 5
+for i in range(1,rows + 1):
+    print(' ' * (rows-i) + '*' * (2*i-1))
 
 
     
