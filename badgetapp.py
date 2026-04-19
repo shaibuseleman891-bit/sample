@@ -41,58 +41,59 @@ class Category:
             items += f"{descr:<23}{amt:>7}\n"
         total = f"Total: {self.get_balance()}" 
         return title + items + total   
+
 def create_spend_chart(categories):
     title = "Percentage spent by category\n"
 
-    # Get total withdrawals per category
-    spent = []
-    total_spent = 0
+    withdrawals = []
+    for category in categories:
+        total = 0
+        for item in category.ledger:
+            if item["amount"] < 0:
+                total += -item["amount"]
+        withdrawals.append(total)
 
-    for cat in categories:
-        cat_spent = 0
-        for item in cat.ledger:
-            if item['amount'] < 0:
-                cat_spent += -item['amount']
-        spent.append(cat_spent)
-        total_spent += cat_spent
+    total_spent = sum(withdrawals)
 
-    # Convert to percentages (rounded down to nearest 10)
-    percentages = [(int((s / total_spent) * 100) // 10) * 10 for s in spent]
+    percentages = []
+    for w in withdrawals:
+        percent = int((w / total_spent) * 100)
+        percent = (percent // 10) * 10
+        percentages.append(percent)
 
-    # Build chart
     chart = title
+
     for i in range(100, -1, -10):
-        line = f"{i:>3}| "
-        for p in percentages:
-            if p >= i:
+        line = str(i).rjust(3) + "| "
+        for percent in percentages:
+            if percent >= i:
                 line += "o  "
             else:
                 line += "   "
-        chart += line + "\n"
+        chart += line + "\n"#shida ilikuwa ni kuweka rstrip
 
-    # Horizontal line
     chart += "    " + "-" * (len(categories) * 3 + 1) + "\n"
 
-    # Vertical names
-    max_len = max(len(cat.name) for cat in categories)
+    max_len = max(len(c.name) for c in categories)
 
     for i in range(max_len):
         line = "     "
-        for cat in categories:
-            if i < len(cat.name):
-                line += cat.name[i] + "  "
+        for c in categories:
+            if i < len(c.name):
+                line += c.name[i] + "  "
             else:
                 line += "   "
-        chart += line.rstrip() + "\n"
+        chart += line + "\n"#shida ni ileile ya kuweka strip
 
-    return chart.rstrip()
+    return chart.rstrip("\n")
+
 food = Category('Food')
 food.deposit(1000, 'initial deposit')
 food.withdraw(10.15, 'groceries')
 food.withdraw(15.89, 'restaurant and more food for dessert')
 clothing = Category('Clothing')
 food.transfer(50, clothing)
-print(food)
-
+print(food)      
 print(create_spend_chart([food,clothing]))
+
 
