@@ -145,8 +145,8 @@
 
 
 # temp_cel = float(input("enter temp in celcius  "))
-# temp_far = (9*temp_cel / 5) + 32
-# print(f"{temp_cel}C = {temp_far} F")
+# temperature = (9*temp_cel / 5) + 32
+# print(f"{temp_cel}C = {temperature} F")
 
 # my_list = [5,2,5,2,2]
 
@@ -383,9 +383,139 @@
 #             return False      
 
 
-for i in range(100,0,-10):
-        print(f"{i:.>}|\n")
+# for i in range(100,0,-10):
+#         print(f"{i:.>}|\n")
+
+# print(f"{1000000:,}")
+
+# name = input('Enter file: ')
+# handle = open(name, 'r')
+# counts = dict()
+# for line in handle:
+#         words = line.split()
+# for word in words:
+#         counts[word] = counts.get(word, 0) + 1
+# bigcount = None
+# bigword = None
+# for word, count in list(counts.items()):
+#         if bigcount is None or count > bigcount:
+#                 bigword = word
+# bigcount = count
+# print(bigword, bigcount)
+
+
+# name = input("enter your name ")
+# print(f"hello {name}")       
+
+
+
+# temperature = input("enter temp in fahreinheit ")
+# try:
+#         fahr = float(temperature)
+#         temp_cel = (fahr - 32)* 5.0 / 9.0   
+#         print(f"{fahr}F = {temp_cel}C")
+# except:
+#         print("Please enter a number!!")       
+# try:                     
+#         hours = float(input("enter hour of work"))  
+#         rate = float(input("enter the rate "))
+
+#         if hours > 40:
+#                 initial_pay = 40 * rate
+#                 overtime_pay = (hours-40) * (rate * 1.5)
+#                 total_pay = initial_pay + overtime_pay 
+#         else:
+#                 pay = hours * rate
+#         print("Pay", pay)
+# except ValueError:
+#         print("please enter a number")
+                                
+# class Wallet:
+#         def __init__(self):
+#                 self.__balance = 0
+                
+#         def __validate(self, amount):
+#                 if amount < 0:
+#                         print("Amount must be positive") 
+#         def deposit(self, amount):
+#                 self.__validate(amount)
+#                 self.__balance += amount 
+#         def withdraw(self,amount):
+#                 self.__validate(amount) 
+#                 if amount > self.__balance:
+#                         print("Insufficient funds")
+#                 self.__balance -= amount
+#         def get_balance(self):
+#                 return self.__balance 
+# acc_one = Wallet() 
+# acc_one.deposit(300)
+# print(acc_one.get_balance())
+
+# acc_one.deposit(-50)
+# acc_one.withdraw(1000)
+
+# class Circle:
+#         def __init__(self,radius):
+#                 self.__radius = radius 
+#         @property
+#         def radius(self): #getter to get a valiable
+#                 return self.__radius
+#         @property
+#         def area(self): # getter to calculate an area 
+#                 return 3.14 * (self.__radius**2)
+# my_cirle = Circle(7)
+# print(my_cirle.radius)
+# print(my_cirle.area)       
+
+
+
+# class Circle:
+#         def __init__(self,radius):
+#                 self.radius = radius # calling the setter 
+#         @property
+#         def radius(self): # getter to get the radius 
+#                 return self._radius
+#         @radius.setter
+#         def radius(self,value):
+#                 if value <= 0:
+#                         print("radius must be a positive number")
+#                 self._radius = value
+# new_circle = Circle(14)
+# print(new_circle.radius)
+
+# new_circle.radius = 28
+# print("modifyed radius:", new_circle.radius)
+
+# class Circle:
+#         def __init__(self,radius):
+#                 self.radius = radius
+#         #Getter 
+#         @property
+#         def radius(self):
+#                 return self._radius 
+#         #setter 
+#         @radius.setter
+#         def radius(self,value):
+#                 if value <= 0:
+#                         print("please enter a positive number")
+#                 self._radius = value
+#         #deleter
+#         @radius.deleter
+#         def radius(self):
+#                 print("deleting radius...")
+#                 del self._radius
+                
+                  
+                
+                
+                
                         
+                
+              
+                                               
+                                
+                                
+                                
                         
 
 
