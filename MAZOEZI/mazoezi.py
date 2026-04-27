@@ -30,33 +30,45 @@
 # animal_sound(Cat())
 # animal_sound(Bird())               
  
-class Twitter:
-   def __init__(self, content):
-       self.content = content
+# class Twitter:
+#    def __init__(self, content):
+#        self.content = content
 
-   def post(self):
-       return f"🐦 Tweet: '{self.content}' (280 chars max)"
+#    def post(self):
+#        return f"🐦 Tweet: '{self.content}' (280 chars max)"
 
-class Instagram:
-   def __init__(self, content):
-       self.content = content
+# class Instagram:
+#    def __init__(self, content):
+#        self.content = content
 
-   def post(self):
-       return f"📸 Instagram Post: '{self.content}' + ✨ filters"
+#    def post(self):
+#        return f"📸 Instagram Post: '{self.content}' + ✨ filters"
 
-class LinkedIn:
-   def __init__(self, content):
-       self.content = content
+# class LinkedIn:
+#    def __init__(self, content):
+#        self.content = content
 
-   def post(self):
-       return f"💼 LinkedIn Article: '{self.content}' (Professional Mode)"
+#    def post(self):
+#        return f"💼 LinkedIn Article: '{self.content}' (Professional Mode)"
 
-def start(social_media):
-   print(social_media.post())  # Calls .post() on any object 
+# def start(social_media):
+#    print(social_media.post())  # Calls .post() on any object 
 
-# Instances
-tweet = Twitter('Just learned Python polymorphism!')
-photo = Instagram('Sunset vibes 🌅')
-article = LinkedIn('Why OOP matters in 2024')
+# # Instances
+# tweet = Twitter('Just learned Python polymorphism!')
+# photo = Instagram('Sunset vibes 🌅')
+# article = LinkedIn('Why OOP matters in 2024')
 
-start(tweet)   
+# start(tweet)   
+
+from abc import ABC, abstractmethod
+class Animal(ABC): 
+   @abstractmethod
+   def make_sound(self):
+       pass
+class Dog(Animal):
+    def make_sound(self):
+        print("woof")
+       
+Dog().make_sound()    
+    
