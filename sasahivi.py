@@ -144,9 +144,9 @@
 # print(f"my name is {name} iam {umri} years old")
 
 
-# temp_cel = float(input("enter temp in celcius  "))
-# temperature = (9*temp_cel / 5) + 32
-# print(f"{temp_cel}C = {temperature} F")
+temp_cel = float(input("enter temp in celcius  "))
+temperature = (9*temp_cel / 5) + 32
+print(f"{temp_cel}C = {temperature} F")
 
 # my_list = [5,2,5,2,2]
 
